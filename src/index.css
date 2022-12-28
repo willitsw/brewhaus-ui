@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.carousel-overlay {
+    top: 2em;
+    left: 50%;
+    transform: translate(-50%, 0%);
+}
