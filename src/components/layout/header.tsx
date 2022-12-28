@@ -56,24 +56,36 @@ const Header = () => {
               },
               ,
               {
-                key: "story",
-                label: `Story`,
-              },
-              ,
-              {
-                key: "brew-crew",
-                label: `Brew Crew`,
+                key: "about",
+                label: `About`,
                 children: [
+                  {
+                    key: "story",
+                    label: "Story",
+                  },
+                  {
+                    key: "brew-crew",
+                    label: "Brew Crew",
+                  },
                   {
                     key: "participating-schools",
                     label: "Participating Schools",
                   },
                 ],
               },
-              ,
               {
                 key: "where-to-buy",
                 label: `Where To Buy`,
+                children: [
+                  {
+                    key: "participating-breweries",
+                    label: "Participating Breweries",
+                  },
+                  {
+                    key: "vendor-locations",
+                    label: "Vendor Locations",
+                  },
+                ],
               },
               {
                 key: "media",

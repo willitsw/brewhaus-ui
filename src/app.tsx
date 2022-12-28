@@ -5,12 +5,13 @@ import BrewCrewPage from "./pages/brew-crew";
 import ContactPage from "./pages/contact";
 import MediaPage from "./pages/media";
 import ShopPage from "./pages/shop";
-import WhereToBuyPage from "./pages/where-to-buy";
 import Layout from "./components/layout/layout";
 import ErrorBoundary from "./components/error-boundary";
 import StoryPage from "./pages/story";
 import { ConfigProvider } from "antd";
 import ParticipatingSchoolsPage from "./pages/participating-schools";
+import ParticipatingBreweriesPage from "./pages/participating-breweries";
+import VendorLocationsPage from "./pages/vendor-locations";
 
 const App = () => {
   const router = createBrowserRouter([
@@ -25,10 +26,11 @@ const App = () => {
           errorElement: <ErrorBoundary />,
         },
         {
-          path: "brew-crew",
+          path: "about",
           errorElement: <ErrorBoundary />,
           children: [
-            { path: "", element: <BrewCrewPage /> },
+            { path: "brew-crew", element: <BrewCrewPage /> },
+            { path: "story", element: <StoryPage /> },
             {
               path: "participating-schools",
               element: <ParticipatingSchoolsPage />,
@@ -52,13 +54,14 @@ const App = () => {
         },
         {
           path: "where-to-buy",
-          element: <WhereToBuyPage />,
           errorElement: <ErrorBoundary />,
-        },
-        {
-          path: "story",
-          element: <StoryPage />,
-          errorElement: <ErrorBoundary />,
+          children: [
+            {
+              path: "participating-breweries",
+              element: <ParticipatingBreweriesPage />,
+            },
+            { path: "vendor-locations", element: <VendorLocationsPage /> },
+          ],
         },
       ],
     },

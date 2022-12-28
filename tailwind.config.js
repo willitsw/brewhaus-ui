@@ -6,7 +6,14 @@ module.exports = {
     "./src/app.tsx",
   ],
   theme: {
-    extend: {},
+    screens: {
+      sm: "640px",
+      md: "768px",
+      lg: "1024px",
+      xl: "1440px",
+    },
+    colors: {
+      red: "#e05353",
+    },
   },
-  plugins: [],
 };
