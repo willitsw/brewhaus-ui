@@ -76,6 +76,7 @@ const App = () => {
           colorSuccess: "#52c41a",
           colorWarning: "#faad14",
           colorError: "#f5222d",
+          colorLinkHover: "#e05353",
         },
       }}
     >

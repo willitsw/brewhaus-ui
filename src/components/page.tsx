@@ -8,8 +8,8 @@ interface PageProps {
 
 const Page = ({ title, children }: PageProps) => {
   return (
-    <div className="m-4">
-      <Typography.Title>{title}</Typography.Title>
+    <div className="m-4 flex flex-col gap-5">
+      <Typography.Title className="mt-5">{title}</Typography.Title>
       {children}
     </div>
   );

@@ -31,7 +31,7 @@ const Header = () => {
             style={
               screenSize < ScreenSize.large
                 ? { width: 20, marginRight: 20 }
-                : { width: 600 }
+                : { width: 500 }
             }
             theme="dark"
             mode="horizontal"
