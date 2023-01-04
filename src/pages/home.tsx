@@ -13,21 +13,57 @@ import { useNavigate } from "react-router-dom";
 const HomePage = () => {
   const navigate = useNavigate();
   const screenSize = useResponsiveness();
-  const overlayImage =
-    screenSize < ScreenSize.extraLarge ? "logo.png" : "emboss_logo.png";
+  let height = 150;
+  let width = 200;
+  switch (screenSize) {
+    case ScreenSize.small:
+      height = 100;
+      width = 150;
+      break;
+    case ScreenSize.medium:
+      height = 200;
+      width = 275;
+      break;
+    case ScreenSize.large:
+      height = 250;
+      width = 300;
+      break;
+    case ScreenSize.extraLarge:
+      height = 375;
+      width = 450;
+      break;
+    case ScreenSize.extraExtraLarge:
+      height = 500;
+      width = 650;
+      break;
+    default:
+      break;
+  }
   return (
     <div>
       <div>
         <div className="relative">
           <img
-            src={`${constants.imageUri}/${overlayImage}`}
+            src={`${constants.imageUri}/emboss_logo.png`}
             className="absolute z-10 carousel-overlay"
+            height={height}
+            width={width}
           />
         </div>
 
         <Carousel autoplay>
-          <img src={`${constants.imageUri}/brewhaus-group-1.png`} />
-          <img src={`${constants.imageUri}/bourbon-all.jpg`} />
+          <img
+            src={`${constants.imageUri}/home-carousel/brewhaus-group-1.png`}
+          />
+          <img src={`${constants.imageUri}/home-carousel/dog.png`} />
+          <img src={`${constants.imageUri}/home-carousel/eric-baking.jpg`} />
+          <img src={`${constants.imageUri}/home-carousel/nat.jpg`} />
+          <img src={`${constants.imageUri}/home-carousel/kids.jpg`} />
+          <img src={`${constants.imageUri}/home-carousel/bakers2.jpg`} />
+          <img src={`${constants.imageUri}/home-carousel/bags.jpg`} />
+          <img src={`${constants.imageUri}/home-carousel/baker.jpg`} />
+          <img src={`${constants.imageUri}/home-carousel/baking.jpg`} />
+          <img src={`${constants.imageUri}/home-carousel/kids2.jpg`} />
         </Carousel>
       </div>
       <div className="p-4">
