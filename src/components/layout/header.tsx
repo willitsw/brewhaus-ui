@@ -87,10 +87,10 @@ const Header = () => {
                   },
                 ],
               },
-              {
-                key: "media",
-                label: `Media`,
-              },
+              // {
+              //   key: "media",
+              //   label: `Media`,
+              // },
               {
                 key: "contact",
                 label: `Contact`,
