@@ -11,3 +11,12 @@
 h4 {
     color: #e05353 !important;
 }
+
+.products {
+    display: flex;
+    flex-direction: row;
+    gap: 25px !important;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: center; 
+}
