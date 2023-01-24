@@ -3,7 +3,7 @@ import ShopifyClient from "../utils/shopify-client";
 import { Product, LineItemToAdd } from "shopify-buy";
 import Loader from "../components/loader";
 import Page from "../components/page";
-import { Button, Card, Col, Row, Typography } from "antd";
+import { Button, Card, Col, Form, Row, Select, Typography } from "antd";
 import { PlusOutlined } from "@ant-design/icons";
 
 const formatter = new Intl.NumberFormat("en-US", {
@@ -60,8 +60,37 @@ const ShopPage = () => {
                 ]}
               >
                 <Card.Meta
-                  title={product.title}
-                  description={product.description}
+                  title={
+                    <Typography.Title level={4}>
+                      {product.title}
+                    </Typography.Title>
+                  }
+                  description={
+                    <div>
+                      <div>{product.description}</div>
+                      <Typography.Title className="mt-5" level={5}>
+                        Options
+                      </Typography.Title>
+                      <div className="flex flex-col">
+                        {product.options.map((option) => (
+                          <Form.Item
+                            label={option.name}
+                            labelAlign="left"
+                            name="size"
+                          >
+                            <Select
+                              defaultValue="Select Option"
+                              fieldNames={{ label: "label" }}
+                              options={option.values.map((value) => ({
+                                label: value.value,
+                                value: value.option_id,
+                              }))}
+                            />
+                          </Form.Item>
+                        ))}
+                      </div>
+                    </div>
+                  }
                 />
               </Card>
             );
