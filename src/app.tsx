@@ -12,6 +12,7 @@ import { ConfigProvider } from "antd";
 import ParticipatingSchoolsPage from "./pages/participating-schools";
 import ParticipatingBreweriesPage from "./pages/participating-breweries";
 import VendorLocationsPage from "./pages/vendor-locations";
+import ShopifyProvider from "./components/shopify-provider";
 
 const App = () => {
   const router = createBrowserRouter([
@@ -80,7 +81,9 @@ const App = () => {
         },
       }}
     >
-      <RouterProvider router={router} />
+      <ShopifyProvider>
+        <RouterProvider router={router} />
+      </ShopifyProvider>
     </ConfigProvider>
   );
 };
