@@ -152,7 +152,7 @@ const ShopPage = () => {
             return <StoreItem key={idx} product={product} />;
           })}
         </div>
-        <div className="">
+        <div className="text-center">
           <Button
             onClick={checkout}
             disabled={cartCount < 1}

@@ -44,17 +44,27 @@ const Header = () => {
               defaultSelectedKeys={["home"]}
               selectedKeys={selectedKeys}
               onClick={(value) => {
-                navigate(
-                  value.keyPath
-                    .filter((key) => key !== "rc-menu-more")
-                    .reverse()
-                    .join("/")
-                );
+                if (value.key === "donate") {
+                  window.open(
+                    "https://www.paypal.com/donate/?hosted_button_id=62NHVY59ESVAC"
+                  );
+                } else {
+                  navigate(
+                    value.keyPath
+                      .filter((key) => key !== "rc-menu-more")
+                      .reverse()
+                      .join("/")
+                  );
+                }
               }}
               items={[
                 {
                   key: "home",
                   label: `Home`,
+                },
+                {
+                  key: "donate",
+                  label: `Donate`,
                 },
                 {
                   key: "shop",
@@ -103,15 +113,21 @@ const Header = () => {
                 },
               ]}
             />
-            <Button
-              onClick={checkout}
-              disabled={cartCount < 1}
-              icon={<ShoppingCartOutlined className="mr-3" />}
-              type="ghost"
-              style={{ color: "white" }}
-            >
-              {cartCount}
-            </Button>
+            {cartCount >= 1 && (
+              <Button
+                onClick={checkout}
+                disabled={cartCount < 1}
+                icon={<ShoppingCartOutlined className="mr-3" />}
+                type="ghost"
+                style={{
+                  color: "rgba(255, 255, 255, 0.65)",
+                  display: "flex",
+                  alignItems: "center",
+                }}
+              >
+                {cartCount}
+              </Button>
+            )}
           </div>
         </div>
       </Layout.Header>
