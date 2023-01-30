@@ -86,7 +86,7 @@ const StoreItem = ({ product }: StoreItemProps) => {
           />
         </Form.Item>,
         <Button
-          className="bg-red mt-3"
+          className="bg-red mt-3 ml-3 flex flex-row items-center"
           type="primary"
           icon={<PlusOutlined style={{ verticalAlign: "middle" }} />}
           size="large"
@@ -138,6 +138,7 @@ const ShopPage = () => {
       title="Shop"
       secondaryContent={
         <Button
+          className="flex flex-row items-center"
           onClick={checkout}
           disabled={cartCount < 1}
           icon={<ShoppingCartOutlined />}
@@ -152,8 +153,9 @@ const ShopPage = () => {
             return <StoreItem key={idx} product={product} />;
           })}
         </div>
-        <div className="text-center">
+        <div className="flex flex-row justify-center">
           <Button
+            className="flex flex-row items-center"
             onClick={checkout}
             disabled={cartCount < 1}
             icon={<ShoppingCartOutlined />}

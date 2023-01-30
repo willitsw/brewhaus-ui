@@ -9,66 +9,65 @@ import { constants } from "../constants";
 
 const BrewCrewPage = () => {
   const screenSize = useResponsiveness();
-  console.log(screenSize);
 
   let slides: React.ReactNode[];
   if (screenSize >= ScreenSize.extraExtraLarge) {
     slides = [
-      <div className="block mx-auto">
+      <div className="block mx-auto" key={1}>
         <div className="flex flex-row justify-around">
           <img src={`${constants.imageUri}/brew-crew/0.jpg`} />
           <img src={`${constants.imageUri}/brew-crew/1.jpg`} />
         </div>
       </div>,
-      <div className="block mx-auto">
+      <div className="block mx-auto" key={2}>
         <div className="flex flex-row justify-around">
           <img src={`${constants.imageUri}/brew-crew/2.jpg`} />
           <img src={`${constants.imageUri}/brew-crew/3.jpg`} />
         </div>
       </div>,
-      <div className="block mx-auto">
+      <div className="block mx-auto" key={3}>
         <div className="flex flex-row justify-around">
           <img src={`${constants.imageUri}/brew-crew/4.jpg`} />
           <img src={`${constants.imageUri}/brew-crew/5.jpg`} />
         </div>
       </div>,
-      <div className="block mx-auto">
+      <div className="block mx-auto" key={4}>
         <div className="flex flex-row justify-around">
           <img src={`${constants.imageUri}/brew-crew/6.jpg`} />
           <img src={`${constants.imageUri}/brew-crew/7.jpg`} />
         </div>
       </div>,
-      <div className="block mx-auto">
+      <div className="block mx-auto" key={5}>
         <div className="flex flex-row justify-around">
           <img src={`${constants.imageUri}/brew-crew/8.jpg`} />
           <img src={`${constants.imageUri}/brew-crew/9.jpg`} />
         </div>
       </div>,
-      <div className="block mx-auto">
+      <div className="block mx-auto" key={6}>
         <div className="flex flex-row justify-around">
           <img src={`${constants.imageUri}/brew-crew/10.jpg`} />
           <img src={`${constants.imageUri}/brew-crew/11.jpg`} />
         </div>
       </div>,
-      <div className="block mx-auto">
+      <div className="block mx-auto" key={7}>
         <div className="flex flex-row justify-around">
           <img src={`${constants.imageUri}/brew-crew/12.jpg`} />
           <img src={`${constants.imageUri}/brew-crew/13.jpg`} />
         </div>
       </div>,
-      <div className="block mx-auto">
+      <div className="block mx-auto" key={8}>
         <div className="flex flex-row justify-around">
           <img src={`${constants.imageUri}/brew-crew/14.jpg`} />
           <img src={`${constants.imageUri}/brew-crew/15.jpg`} />
         </div>
       </div>,
-      <div className="block mx-auto">
+      <div className="block mx-auto" key={9}>
         <div className="flex flex-row justify-around">
           <img src={`${constants.imageUri}/brew-crew/16.jpg`} />
           <img src={`${constants.imageUri}/brew-crew/17.jpg`} />
         </div>
       </div>,
-      <div className="block mx-auto">
+      <div className="block mx-auto" key={10}>
         <div className="flex flex-row justify-around">
           <img src={`${constants.imageUri}/brew-crew/18.jpg`} />
           <img src={`${constants.imageUri}/brew-crew/12.jpg`} />
@@ -77,7 +76,7 @@ const BrewCrewPage = () => {
     ];
   } else {
     slides = [...Array(19).keys()].map((key) => (
-      <div>
+      <div key={key}>
         <img
           src={`${constants.imageUri}/brew-crew/${key}.jpg`}
           style={{
