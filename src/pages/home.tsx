@@ -1,5 +1,5 @@
 import { Button, Carousel, Divider, Typography } from "antd";
-import { AmazonOutlined } from "@ant-design/icons";
+import { ShoppingOutlined } from "@ant-design/icons";
 import React from "react";
 import ContentBlock from "../components/content-block";
 import {
@@ -92,23 +92,24 @@ const HomePage = () => {
                 Support Brewhaus Dog Bones
               </Typography.Title>
               <Typography.Text>
-                Great news! If you shop on Amazon, you can now select Brewhaus
-                to get a .5% donation from each purchase you make. Simply start
-                your shopping on smile.amazon.com and choose Brewhaus from the
-                list of nonprofits. There’s no addition cost!
+                Great news! If you shop on Kroger or any Kroger owned grocery
+                store, you can now select Brewhaus to receive a from each
+                purchase you make. Simply select Brewhaus from the list of
+                available nonprofits at the link below. There’s no additional
+                cost!
               </Typography.Text>
               <div className="p-5">
                 <a
-                  href="https://smile.amazon.com/?ie=UTF8&q=brewhaus"
+                  href="https://www.kroger.com/i/community/community-rewards"
                   target="_blank"
                 >
                   <Button
-                    className="bg-red"
-                    icon={<AmazonOutlined />}
+                    className="bg-red flex flex-row items-center"
+                    icon={<ShoppingOutlined />}
                     type="primary"
                     size="large"
                   >
-                    Amazon Smile
+                    Kroger Community Rewards
                   </Button>
                 </a>
               </div>
@@ -128,7 +129,7 @@ const HomePage = () => {
                   className="bg-red"
                   type="primary"
                   size="large"
-                  onClick={() => navigate("/brew-crew")}
+                  onClick={() => navigate("/about/brew-crew")}
                 >
                   Find Out More!
                 </Button>
