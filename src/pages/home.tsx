@@ -51,7 +51,7 @@ const HomePage = () => {
           />
         </div>
 
-        <Carousel autoplay>
+        <Carousel autoplay className="carousel">
           <img
             src={`${constants.imageUri}/home-carousel/brewhaus-group-1.png`}
           />
@@ -70,18 +70,19 @@ const HomePage = () => {
         <ContentBlock
           leftContent={
             <div>
-              <Typography.Title level={2}>Brewhaus Bakery</Typography.Title>
+              <Divider style={{borderColor:'rgb(55, 55, 55)', margin: 0, padding: '0 2rem 0 2rem'}}><Typography.Title level={1} id="welcome-to">Welcome To</Typography.Title></Divider>
+              <Typography.Title level={1} id="brewhaus">Brewhaus Bakery</Typography.Title>
               <Typography.Text>
-                The Brewhaus Bakery Co. is a not-for-profit company dedicated to
+                Brewhaus Bakery Co. is a not-for-profit company dedicated to
                 providing vocational training for young adults with
                 disabilities. Brewhaus Dog Bones are always handcrafted, small
-                batch, oven baked dog treats made from whole grains proudly
+                batch, oven-baked dog treats made from whole grains proudly
                 sourced from local microbreweries.
               </Typography.Text>
             </div>
           }
           rightContent={
-            <YouTubeSegment embedId="i_8GzmPsNNw" title="Brewhaus Bakery" />
+            <YouTubeSegment embedId="i_8GzmPsNNw" title="Brewhaus Bakery"/>
           }
         />
         <Divider />
@@ -92,14 +93,14 @@ const HomePage = () => {
                 Support Brewhaus Dog Bones
               </Typography.Title>
               <Typography.Text>
-                Great news! If you shop on Kroger or any Kroger owned grocery
-                store, you can now select Brewhaus to receive a from each
+                Great news! If you shop at Kroger or any Kroger-owned grocery
+                store, you can now select Brewhaus to receive a reward from each
                 purchase you make. Simply select Brewhaus from the list of
                 available nonprofits at the link below. There’s no additional
                 cost!
               </Typography.Text>
               <div className="p-5">
-                <a
+                <a className="items-center"
                   href="https://www.kroger.com/i/community/community-rewards"
                   target="_blank"
                 >
@@ -119,8 +120,8 @@ const HomePage = () => {
             <div>
               <Typography.Title level={2}>The Brew Crew</Typography.Title>
               <Typography.Text>
-                Your purchase supports fun, meaningful project based learning
-                and work skill development to inspire and enable people to
+                Your purchase supports fun, meaningful, project-based learning,
+                and work-skill development to inspire and enable people to
                 improve their lives and the world around them. Thank you for
                 supporting our mission! PAW IT FORWARD!
               </Typography.Text>
