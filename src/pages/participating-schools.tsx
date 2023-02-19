@@ -28,7 +28,7 @@ const schools = [
 
 const ParticipatingSchoolsPage = () => {
   return (
-    <Page title="Partipating Schools">
+    <Page title="Participating Schools">
       <Typography.Title
         level={4}
         className="text-center mb-2"
@@ -41,7 +41,7 @@ const ParticipatingSchoolsPage = () => {
         className="text-center mt-2"
         style={{ marginTop: 0 }}
       >
-        All supplies, ingredients, support and T shirts provided at no charge as
+        All supplies, ingredients, support and T-shirts provided at no charge as
         part of our mission to support creative social enterprise and vocational
         training
       </Typography.Title>

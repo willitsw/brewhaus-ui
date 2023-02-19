@@ -15,13 +15,14 @@ const YouTubeSegment = ({ embedId, title }: YouTubeSegmentProps) => {
       : { float: "right", width: "500px", height: "250px", marginLeft: "auto" };
 
   return (
-    <iframe
-      src={`https://www.youtube.com/embed/${embedId}`}
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowFullScreen
-      title={title}
-      style={style}
-    />
+      <iframe 
+        className="youtube-thumb"
+        src={`https://www.youtube.com/embed/${embedId}`}
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowFullScreen
+        title={title}
+        style={style}
+      />
   );
 };
 
