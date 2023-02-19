@@ -13,6 +13,10 @@ import {
 import { PlusOutlined, ShoppingCartOutlined } from "@ant-design/icons";
 import { useShopify } from "../components/shopify-provider";
 import { LineItemToAdd, Product } from "shopify-buy";
+import {
+  ScreenSize,
+  useResponsiveness,
+} from "../components/use-responsiveness";
 
 const formatter = new Intl.NumberFormat("en-US", {
   style: "currency",
@@ -30,6 +34,7 @@ const StoreItem = ({ product }: StoreItemProps) => {
   const [optionSelections, setOptionSelections] = useState<{
     [key: string]: string;
   }>({});
+  const screenSize = useResponsiveness();
 
   const { addToCart } = useShopify();
 
@@ -69,13 +74,10 @@ const StoreItem = ({ product }: StoreItemProps) => {
       style={{ width: 500 }}
       cover={<img alt={product.title} src={product.images[0].src} />}
       actions={[
-        <Typography.Title className="mt-4" level={3}>
+        <Typography.Title style={{ marginBottom: 0 }} level={3}>
           {getPrice(product.variants[0].price)}
         </Typography.Title>,
-        <Form.Item
-          style={{ padding: 10, marginBottom: 0, marginTop: 5 }}
-          label="Quantity"
-        >
+        <Form.Item style={{ marginBottom: 0, marginTop: 0 }} label="Quantity">
           <InputNumber
             min={0}
             onChange={(count) => {
@@ -86,10 +88,14 @@ const StoreItem = ({ product }: StoreItemProps) => {
           />
         </Form.Item>,
         <Button
-          className="bg-red mt-3 ml-3 flex flex-row items-center"
+          className="bg-red"
           type="primary"
-          icon={<PlusOutlined style={{ verticalAlign: "middle" }} />}
-          size="large"
+          icon={
+            screenSize > ScreenSize.small && (
+              <PlusOutlined style={{ verticalAlign: "middle" }} />
+            )
+          }
+          size={screenSize > ScreenSize.small ? "large" : "small"}
           onClick={handleSubmitClick}
         >
           Add to Cart
