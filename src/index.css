@@ -88,3 +88,32 @@ h2 {
 .ant-form-item-label {
   margin-right: 5px !important;
 }
+
+
+/*//////  testimonials.tsx   //////*/
+
+
+.ant-collapse-item:first-child {
+  background-color: #001529a6;
+  border-top-right-radius: 6px;
+  border-top-left-radius: 6px;
+}
+
+.ant-collapse-item:nth-child(n+2) {
+  background-color: #001529a6;
+}  
+
+.ant-collapse-header-text {
+  font-weight: 600;
+  font-size: 1rem;
+  color: whitesmoke;
+}
+
+.ant-collapse-content-box {
+  background-color: whitesmoke;
+  font-size: 0.9rem; 
+}
+
+.ant-collapse-expand-icon {
+  color: whitesmoke;
+}
