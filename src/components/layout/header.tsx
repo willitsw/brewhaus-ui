@@ -92,6 +92,10 @@ const Header = () => {
                       key: "participating-schools",
                       label: "Participating Schools",
                     },
+                    {
+                      key: "testimonials",
+                      label: "Testimonials",
+                    },
                   ],
                 },
                 {

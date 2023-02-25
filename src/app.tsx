@@ -2,6 +2,7 @@ import React from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import HomePage from "./pages/home";
 import BrewCrewPage from "./pages/brew-crew";
+import TestimonialsPage from "./pages/testimonials";
 import ContactPage from "./pages/contact";
 import MediaPage from "./pages/media";
 import ShopPage from "./pages/shop";
@@ -36,6 +37,7 @@ const App = () => {
               path: "participating-schools",
               element: <ParticipatingSchoolsPage />,
             },
+            { path: "testimonials", element: <TestimonialsPage /> }
           ],
         },
         {
