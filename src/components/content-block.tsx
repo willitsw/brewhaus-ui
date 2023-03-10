@@ -19,7 +19,7 @@ const ContentBlock = ({ leftContent, rightContent }: ContentBlockProps) => {
   }
 
   return (
-    <div className="flex flex-row justify-between items-start gap-10 my-10">
+    <div className="flex flex-row justify-between items-start gap-10 m-10">
       <div className="w-1/2 flex flex-col">{leftContent}</div>
       <div className="w-1/2 flex flex-col">{rightContent}</div>
     </div>

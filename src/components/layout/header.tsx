@@ -22,26 +22,29 @@ const Header = () => {
   return (
     <Affix className="z-20">
       <Layout.Header
-        style={{ height: 92,
-                 boxShadow: '0 4px 10px rgb(185, 185, 185)',         
-        }}
+        style={{ height: 92, boxShadow: "0 4px 10px rgb(185, 185, 185)" }}
         className="flex flex-row items-center"
       >
         <div
           className={`container mx-auto ${
             screenSize < ScreenSize.large ? null : "px-4"
           } flex flex-row items-center justify-between`}
-        > 
-          <a id="logo" href="/" >
-               <img id="logo" src={`${constants.imageUri}/logo.png`} height={55} width={80} />
+        >
+          <a id="logo" href="/">
+            <img
+              id="logo"
+              src={`${constants.imageUri}/logo.png`}
+              height={55}
+              width={80}
+            />
           </a>
-       
+
           <div className="flex flex-row justify-end items-center">
             <Menu
               style={
                 screenSize < ScreenSize.large
                   ? { width: 20, marginRight: 20 }
-                  : { width: 500 }
+                  : { width: 550 }
               }
               theme="dark"
               mode="horizontal"

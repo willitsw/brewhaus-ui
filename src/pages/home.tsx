@@ -70,19 +70,109 @@ const HomePage = () => {
         <ContentBlock
           leftContent={
             <div>
-              <Divider style={{borderColor:'rgb(55, 55, 55)', margin: 0, padding: '0 2rem 0 2rem'}}><Typography.Title level={1} id="welcome-to">Welcome To</Typography.Title></Divider>
-              <Typography.Title level={1} id="brewhaus">Brewhaus Bakery</Typography.Title>
+              <Divider
+                style={{
+                  borderColor: "rgb(55, 55, 55)",
+                  margin: 0,
+                  padding: "0 2rem 0 2rem",
+                }}
+              >
+                <Typography.Title level={1} id="welcome-to">
+                  About Brewhaus Bakery & Dog Bones
+                </Typography.Title>
+              </Divider>
               <Typography.Text>
-                Brewhaus Bakery Co. is a not-for-profit company dedicated to
-                providing vocational training for young adults with
-                disabilities. Brewhaus Dog Bones are always handcrafted, small
-                batch, oven-baked dog treats made from whole grains proudly
-                sourced from local microbreweries.
+                Brewhaus Bakery Co. is a not-for-profit, 501c3 organization, to
+                help individuals with disabilities have meaningful, learning &
+                work opportunities. We offer wholesome, handcrafted, small batch
+                dog treats made with spent grains (malted barley) from local
+                craft breweries!
               </Typography.Text>
+              <div className="p-5">
+                <Button
+                  className="bg-red flex flex-row items-center"
+                  type="primary"
+                  size="large"
+                  onClick={() => navigate("/about/story")}
+                >
+                  Learn about uses of spent grains
+                </Button>
+              </div>
             </div>
           }
           rightContent={
-            <YouTubeSegment embedId="i_8GzmPsNNw" title="Brewhaus Bakery"/>
+            <div className="flex justify-center">
+              <img
+                src={constants.imageUri + "/home-page/bakers-with-barley.jpg"}
+                style={{ height: 250, width: "auto" }}
+              />
+            </div>
+          }
+        />
+        <Divider />
+        <ContentBlock
+          rightContent={
+            <div>
+              <Typography.Title level={2}>Fostering Community</Typography.Title>
+              <Typography.Text>
+                We’ve grown into a collaborative bake space to foster an
+                inclusive environment and provide additional opportunities for
+                skill development & growth. Our goal is to foster a fun,
+                creative bake space where people and food businesses can thrive!
+              </Typography.Text>
+              <div className="p-5">
+                <Button
+                  className="bg-red flex flex-row items-center"
+                  type="primary"
+                  size="large"
+                  onClick={() => navigate("/about/brew-crew")}
+                >
+                  Find out how to work with us!
+                </Button>
+              </div>
+            </div>
+          }
+          leftContent={
+            <div className="flex justify-center">
+              <img
+                src={constants.imageUri + "/home-page/kim-nat.jpg"}
+                style={{ height: 250, width: "auto" }}
+              />
+            </div>
+          }
+        />
+        <Divider />
+        <ContentBlock
+          leftContent={
+            <div>
+              <Typography.Title level={2}>
+                Skills for the Future
+              </Typography.Title>
+              <Typography.Text>
+                Our bakers have a start to finish business model that builds
+                skills and confidence and creates opportunities for community
+                engagement! Our platform is welcoming to all and has a positive
+                impact through empowerment, partnership and outreach!
+              </Typography.Text>
+              <div className="p-5">
+                <Button
+                  className="bg-red flex flex-row items-center"
+                  type="primary"
+                  size="large"
+                  onClick={() => navigate("/about/brew-crew")}
+                >
+                  Ask us how to get involved!
+                </Button>
+              </div>
+            </div>
+          }
+          rightContent={
+            <div className="flex justify-center">
+              <img
+                src={constants.imageUri + "/home-page/meg-eric-nat.jpg"}
+                style={{ height: 250, width: "auto" }}
+              />
+            </div>
           }
         />
         <Divider />
@@ -100,7 +190,8 @@ const HomePage = () => {
                 cost!
               </Typography.Text>
               <div className="p-5">
-                <a className="items-center"
+                <a
+                  className="items-center"
                   href="https://www.kroger.com/i/community/community-rewards"
                   target="_blank"
                 >
