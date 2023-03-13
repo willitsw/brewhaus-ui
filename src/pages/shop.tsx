@@ -38,12 +38,14 @@ const StoreItem = ({ product }: StoreItemProps) => {
 
   const { addToCart } = useShopify();
 
+  const options = product.options.filter((option) => option.name !== "Title");
+
   const handleSubmitClick = async () => {
     if (itemCount < 1) {
       message.error("You must choose a quantity!");
       return;
     }
-    for (const option of product.options) {
+    for (const option of options) {
       if (!(option.name in optionSelections)) {
         message.error(`You must select a value for ${option.name}!`);
         return;
@@ -107,28 +109,35 @@ const StoreItem = ({ product }: StoreItemProps) => {
         description={
           <div>
             <div>{product.description}</div>
-            <Typography.Title className="mt-5" level={5}>
-              Options
-            </Typography.Title>
-            <div className="flex flex-col">
-              {product.options.map((option, idx) => (
-                <Form.Item key={idx} label={option.name} labelAlign="left">
-                  <Select
-                    defaultValue="Select Option"
-                    value={optionSelections[option.name] ?? "Select Option"}
-                    onSelect={(_, value) => {
-                      handleSelectOption(value.value.toString(), option.name);
-                    }}
-                  >
-                    {option.values.map((value, idx) => (
-                      <Select.Option key={idx} value={value.value}>
-                        {value.value}
-                      </Select.Option>
-                    ))}
-                  </Select>
-                </Form.Item>
-              ))}
-            </div>
+            {options.length > 0 && (
+              <>
+                <Typography.Title className="mt-5" level={5}>
+                  Options
+                </Typography.Title>
+                <div className="flex flex-col">
+                  {options.map((option, idx) => (
+                    <Form.Item key={idx} label={option.name} labelAlign="left">
+                      <Select
+                        defaultValue="Select Option"
+                        value={optionSelections[option.name] ?? "Select Option"}
+                        onSelect={(_, value) => {
+                          handleSelectOption(
+                            value.value.toString(),
+                            option.name
+                          );
+                        }}
+                      >
+                        {option.values.map((value, idx) => (
+                          <Select.Option key={idx} value={value.value}>
+                            {value.value}
+                          </Select.Option>
+                        ))}
+                      </Select>
+                    </Form.Item>
+                  ))}
+                </div>
+              </>
+            )}
           </div>
         }
       />
