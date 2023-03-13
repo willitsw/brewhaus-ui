@@ -1,5 +1,6 @@
 import { Layout, Typography } from "antd";
 import React from "react";
+import { constants } from "../../constants";
 
 const Footer = () => {
   return (
@@ -29,6 +30,13 @@ const Footer = () => {
         513.520.0310{" "}
         <Typography.Link href="http://www.brewhausdogbones.com">
           brewhausdogbones.com
+        </Typography.Link>
+        <br />
+        <Typography.Link
+          href={`${constants.imageUri}/brewhaus-terms.pdf`}
+          target="_blank"
+        >
+          Copyright 2023 - Click Here for Terms and Conditions
         </Typography.Link>
       </div>
     </Layout.Footer>
