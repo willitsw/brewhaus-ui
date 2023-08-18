@@ -70,17 +70,9 @@ const HomePage = () => {
         <ContentBlock
           leftContent={
             <div>
-              <Divider
-                style={{
-                  borderColor: "rgb(55, 55, 55)",
-                  margin: 0,
-                  padding: "0 2rem 0 2rem",
-                }}
-              >
                 <Typography.Title level={1} id="welcome-to">
                   About Brewhaus Bakery & Dog Bones
                 </Typography.Title>
-              </Divider>
               <Typography.Text>
                 Brewhaus Bakery Co. is a not-for-profit, 501c3 organization, to
                 help individuals with disabilities have meaningful, learning &
