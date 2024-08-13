@@ -61,13 +61,13 @@ const breweries: Brewery[] = [
     phone: "(513) 832-1422",
     link: "http://fibbrew.com/",
   },
-  {
-    name: "Fretboard Brewing Co.",
-    logo: "fretboard.png",
-    address: "5800 Creek Rd, Cincinnati, OH 45242",
-    phone: "(513) 914-4677",
-    link: "https://fretboardbrewing.com/",
-  },
+  // {
+  //   name: "Fretboard Brewing Co.",
+  //   logo: "fretboard.png",
+  //   address: "5800 Creek Rd, Cincinnati, OH 45242",
+  //   phone: "(513) 914-4677",
+  //   link: "https://fretboardbrewing.com/",
+  // },
   {
     name: "Fifty West Brewing Co.",
     logo: "fiftywest.jpeg",
